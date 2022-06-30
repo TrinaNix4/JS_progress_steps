@@ -44,4 +44,25 @@ function update() {
       circle.classList.remove("active");
     }
   });
+
+  const actives = document.querySelectorAll(".active");
+
+  //want the progress bar blue as well
+  //take the actives lenth and divid by circles length
+  progress.style.width =
+    ((actives.length - 1) / (circles.length - 1)) * 100 + "%";
+
+  //check the currentActive is equal to 1 (circle 1)
+  //we want prev to be disabled
+  if (currentActive === 1) {
+    prev.disabled = true;
+    //if currentActive is at the end
+    //we want next disabled
+  } else if (currentActive === circles.length) {
+    next.disabled = true;
+    //otherwise, we don't want either to be disabled
+  } else {
+    prev.disabled = false;
+    next.disabled = false;
+  }
 }
