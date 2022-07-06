@@ -66,3 +66,6 @@ function update() {
     next.disabled = false;
   }
 }
+
+//random # 1 - 10
+Math.floor(Math.random() * 10) + 1;
